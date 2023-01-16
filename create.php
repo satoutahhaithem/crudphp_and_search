@@ -3,7 +3,7 @@ require 'db.php';
 if (isset ($_POST['name'])  && isset($_POST['email']) ){
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $sql = 'INSERT INTO tabel(name, email) VALUES(:name, :email)';
+    $sql = 'INSERT INTO people(name, email) VALUES(:name, :email)';
     $statement = $connection->prepare($sql);
     if ($statement->execute([':name' => $name, ':email' => $email])) {
       $message = 'data inserted successfully';
